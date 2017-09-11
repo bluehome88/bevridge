@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Archer-XLight-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-XLight-Pro/Archer-XLight-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-XLight-Pro/Archer-XLight-Pro.woff") format("woff"), url("../fonts/Archer-XLight-Pro/Archer-XLight-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-XLightItal-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-XLightItal-Pro/Archer-XLightItal-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-XLightItal-Pro/Archer-XLightItal-Pro.woff") format("woff"), url("../fonts/Archer-XLightItal-Pro/Archer-XLightItal-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-Thin-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-Thin-Pro/Archer-Thin-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-Thin-Pro/Archer-Thin-Pro.woff") format("woff"), url("../fonts/Archer-Thin-Pro/Archer-Thin-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-ThinItal-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-ThinItal-Pro/Archer-ThinItal-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-ThinItal-Pro/Archer-ThinItal-Pro.woff") format("woff"), url("../fonts/Archer-ThinItal-Pro/Archer-ThinItal-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-Semibold-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-Semibold-Pro/Archer-Semibold-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-Semibold-Pro/Archer-Semibold-Pro.woff") format("woff"), url("../fonts/Archer-Semibold-Pro/Archer-Semibold-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-SembdItal-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-SembdItal-Pro/Archer-SembdItal-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-SembdItal-Pro/Archer-SembdItal-Pro.woff") format("woff"), url("../fonts/Archer-SembdItal-Pro/Archer-SembdItal-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-Medium-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-Medium-Pro/Archer-Medium-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-Medium-Pro/Archer-Medium-Pro.woff") format("woff"), url("../fonts/Archer-Medium-Pro/Archer-Medium-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-MediumItal-Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-MediumItal-Pro/Archer-MediumItal-Pro.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-MediumItal-Pro/Archer-MediumItal-Pro.woff") format("woff"), url("../fonts/Archer-MediumItal-Pro/Archer-MediumItal-Pro.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-Bold/Archer-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-Bold/Archer-Bold.woff") format("woff"), url("../fonts/Archer-Bold/Archer-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Archer-Book";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Archer-Book/Archer-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/Archer-Book/Archer-Book.woff") format("woff"), url("../fonts/Archer-Book/Archer-Book.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Oswald-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Oswald-Light/Oswald-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Light/Oswald-Light.woff") format("woff"), url("../fonts/Oswald-Light/Oswald-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Oswald-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Oswald-Regular/Oswald-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Regular/Oswald-Regular.woff") format("woff"), url("../fonts/Oswald-Regular/Oswald-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Oswald-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Oswald-Bold/Oswald-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Bold/Oswald-Bold.woff") format("woff"), url("../fonts/Oswald-Bold/Oswald-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "BebasNeue-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/BebasNeue-Bold/BebasNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-Bold/BebasNeue-Bold.woff") format("woff"), url("../fonts/BebasNeue-Bold/BebasNeue-Bold.ttf") format("truetype"); }

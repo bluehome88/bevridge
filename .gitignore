@@ -1,0 +1,6 @@
+wp-content/uploads/
+
+local-config.php
+
+.DS_Store
+account.txt

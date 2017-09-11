@@ -1,0 +1,30 @@
+{
+    "name": "strikewood/omnipay-first-atlantic-commerce",
+    "description": "First Atlantic Commerce driver for the Omnipay PHP payment processing library",
+    "keywords": [
+        "first atlantic commerce",
+        "fac",
+        "payment processing",
+        "omnipay",
+        "gateway"
+    ],
+    "homepage": "https://github.com/strikewood/omnipay-first-atlantic-commerce",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Pingel",
+            "email": "jan@strikewood.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "omnipay/common": "~2.3",
+        "alcohol/iso3166": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "autoload": {
+        "psr-4": { "Omnipay\\FirstAtlanticCommerce\\" : "src" }
+    }
+}

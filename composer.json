@@ -1,0 +1,12 @@
+{
+    "name": "si/bevridge",
+    "authors": [
+        {
+            "name": "Arthur Gavrilov",
+            "email": "arthur@simplyintense.com"
+        }
+    ],
+    "require": {
+        "strikewood/woocommerce-first-atlantic-commerce": "^0.1.6"
+    }
+}

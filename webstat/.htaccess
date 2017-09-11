@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/wp.uwebagency.com/webstat"
+AuthUserFile /var/www/vh176766/data/etc/22676672.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>

@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html-aliases/bevridge
+permissions:
+  - object: /var/www/html-aliases/bevridge
+    pattern: "**"
+    owner: bevridge
+    group: www
+    mode: 444
+    type:
+      - file
+  - object: /var/www/html-aliases/bevridge
+    pattern: "**"
+    owner: bevridge
+    group: www
+    mode: 555
+    type:
+      - directory
