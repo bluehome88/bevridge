@@ -3920,12 +3920,6 @@ select.quantity-select {font-size: 14px;line-height: 32px;padding: 0 0 0 28px;te
 
 .cart_item .product-qty{text-align:center;}
 
-
-
-
-
-
-
 }
 @media (max-width:320px) {
 }
@@ -3938,3 +3932,4 @@ select.quantity-select {font-size: 14px;line-height: 32px;padding: 0 0 0 28px;te
 .my_account_link{ float:right; margin-top:-60px;}
 .my_account_link a{ color:white; text-decoration: none; text-transform: uppercase; }
 .logo.fac{left:inherit; right:20px;top:-17px; width:280px;}
+.woocommerce-error{background: #d44646;color: white;padding: 15px 15px 10px;margin-bottom:15px;line-height: 16px;}
