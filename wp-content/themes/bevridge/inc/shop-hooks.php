@@ -97,29 +97,57 @@ add_filter('woocommerce_product_tabs', function ($tabs) {
   return $tabs;
 }, 20);
 
+
+add_filter( 'woocommerce_payment_gateways_settings', 'add_minimum_order_amount' );
+
+function add_minimum_order_amount( $settings ) {
+
+  $updated_settings = array();
+  foreach ( $settings as $section ) {
+
+    if ( isset( $section['id'] ) && 'checkout_process_options' == $section['id'] && isset( $section['type'] ) && 'sectionend' == $section['type'] ) {
+
+      $updated_settings[] = array(
+
+        'name'     => __( 'Minimum Order Amount' ),
+        'desc_tip' => __( 'Customer should not be able to check out if their order is less than the minimum.'),
+        'id'       => 'woocommerce_minimum_order_amount',
+        'type'     => 'number',
+        'css'      => 'min-width:300px;',
+        'std'      => '50',  // WC < 2.0
+        'default'  => '50',  // WC >= 2.0
+      );
+
+    }
+    $updated_settings[] = $section;
+  }
+
+  return $updated_settings;
+}
+
 add_action( 'woocommerce_checkout_process', 'wc_minimum_order_amount' );
 add_action( 'woocommerce_before_cart' , 'wc_minimum_order_amount' );
 function wc_minimum_order_amount() {
     // Set this variable to specify a minimum order value
-    $minimum = 50;
+    $minimum = get_option('woocommerce_minimum_order_amount');
 
     if ( WC()->cart->total < $minimum ) {
 
         if( is_cart() ) {
 
             wc_print_notice( 
-                sprintf( 'You must have an order with a minimum of %s to place your order, your current order total is %s.' , 
-                    wc_price( $minimum ), 
-                    wc_price( WC()->cart->total )
+                sprintf( 'We\'re Sorry, the minimum order is to checkout is %s before VAT.' , 
+                    wc_price( $minimum )
+                    // wc_price( WC()->cart->total )
                 ), 'error' 
             );
 
         } else {
 
             wc_add_notice( 
-                sprintf( 'You must have an order with a minimum of %s to place your order, your current order total is %s.' , 
-                    wc_price( $minimum ), 
-                    wc_price( WC()->cart->total )
+                sprintf( 'We\'re Sorry, the minimum order is to checkout is %s before VAT.' , 
+                    wc_price( $minimum )
+                    // wc_price( WC()->cart->total )
                 ), 'error' 
             );
 
