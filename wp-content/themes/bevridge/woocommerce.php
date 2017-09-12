@@ -25,6 +25,7 @@ $brands_terms = custom_get_brands_categories();
 
 // NEW IS STORE products HTML
 ob_start();
+
 woocommerce_content();
 $new_in_store = ob_get_clean();
 $new_in_store_count = $wp_query->post_count;
@@ -106,7 +107,7 @@ get_header(); ?>
         
       <div class="filter">
         <ul>
-          <? foreach ($tabs as &$term) { ?>
+          <? $url =""; foreach ($tabs as &$term) { ?>
             <? $is_active = in_array($term->slug, (array) @$query_parts['cat']) ?>
             <li>
               <? if ($is_active) { ?>
@@ -117,7 +118,7 @@ get_header(); ?>
                 ?>
                 <a href="<?= $url ?>" class="active"><?= $term->name ?></a>
               <? } else { ?>
-                <a href="<?= esc_url(add_query_arg('cat[]', $term->slug)) ?>"><?= $term->name ?></a>
+                <a href="<?= esc_url(add_query_arg('cat[]', $term->slug, $url)) ?>"><?= $term->name ?></a>
               <? } ?>
             </li>
           <? } ?>
@@ -151,6 +152,18 @@ get_header(); ?>
 
     <div class="container">
       <div class="store">
+      <?php
+          if( (isset($_GET['b']) && $_GET['b'] ) || ( isset( $_GET['cat']) && $_GET['cat'])){
+      ?>
+            <div id="category_product" class="">
+              <? woocommerce_content() ?>
+            </div>
+      <?php
+          }
+          else
+          {
+      ?>
+
         <? $popular_count = count(custom_query_popular_products()) ?>
         <? if ($popular_count > 0) { ?>
         <div class="row store__items">
@@ -182,7 +195,10 @@ get_header(); ?>
 
         <? if (!$popular_count && !$deals_count && !$new_in_store_count) { ?>
           <p style="margin-bottom: 200px">No products were found based on your criteria.</p>
-        <? } ?>
+        <? } 
+
+          }
+        ?>
       </div>
 
       <? dynamic_sidebar('shop_bottom') ?>

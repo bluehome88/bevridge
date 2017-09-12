@@ -1833,7 +1833,7 @@ textarea.input-text {
   .woocommerce .products .product {
   margin: 0 20px 34px 0;
   background: #F5F5F5;
-  width: 191px;
+  width: 191px; 
   padding: 0 15px 15px 15px;
    
   list-style: none; }
@@ -3933,3 +3933,4 @@ select.quantity-select {font-size: 14px;line-height: 32px;padding: 0 0 0 28px;te
 .my_account_link a{ color:white; text-decoration: none; text-transform: uppercase; }
 .logo.fac{left:inherit; right:20px;top:-17px; width:280px;}
 .woocommerce-error{background: #d44646;color: white;padding: 15px 15px 10px;margin-bottom:15px;line-height: 16px;}
+.store #IndexShopFlex{ max-width:1205px; width: calc( 100% + 25px)}
