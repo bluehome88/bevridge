@@ -10,13 +10,15 @@ jQuery(function($) {
     $(".phone-navigation").css("transform", "translate3d(0,0,0)");
   });
 $(document).ready(function(){ 
-$('.owl_carousel_home').bxSlider({
-  minSlides: 1,
-  maxSlides: 1,
- 
-  
-  captions: true
-});
+    $('.owl_carousel_home').bxSlider({
+      minSlides: 1,
+      maxSlides: 1,
+      speed: 1000,
+      infiniteLoop: true,
+      auto: true,  
+      pause: 30000,
+      captions: true
+    });
   });
 
   /*our history click on cap - tabs*/
