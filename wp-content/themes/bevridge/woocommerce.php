@@ -25,7 +25,6 @@ $brands_terms = custom_get_brands_categories();
 
 // NEW IS STORE products HTML
 ob_start();
-
 woocommerce_content();
 $new_in_store = ob_get_clean();
 $new_in_store_count = $wp_query->post_count;
@@ -156,7 +155,11 @@ get_header(); ?>
           if( (isset($_GET['b']) && $_GET['b'] ) || ( isset( $_GET['cat']) && $_GET['cat'])){
       ?>
             <div id="category_product" class="">
-              <? woocommerce_content() ?>
+              <? 
+              $wp_query->query_vars['orderby'] = "meta_title";
+              $wp_query->query_vars['order'] = "ASC";
+
+              woocommerce_content() ?>
             </div>
       <?php
           }

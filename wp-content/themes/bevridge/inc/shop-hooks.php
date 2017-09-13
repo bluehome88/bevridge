@@ -13,19 +13,19 @@ function woocommerce_template_loop_product_title () {
 }
 
 add_filter('woocommerce_before_shop_loop_item', function(){
-//	$post_meta = get_post_meta(get_the_ID(), '_brand_details', true);
+//  $post_meta = get_post_meta(get_the_ID(), '_brand_details', true);
 
-	$brands = custom_get_brands_categories([ 'hide_empty' => false ]);
-	$categories = get_the_terms(get_the_ID(), 'product_cat');
-	echo "<div style='line-height:40px; text-transform:uppercase;min-height:40px;'>";
-	foreach( $categories as $category )
-	{
-		foreach( $brands as $brand ){
-			if( $brand->term_id == $category->term_id )
-				echo $brand->name;
-		}
-	}
-	echo "</div>";
+  $brands = custom_get_brands_categories([ 'hide_empty' => false ]);
+  $categories = get_the_terms(get_the_ID(), 'product_cat');
+  echo "<div style='line-height:40px; text-transform:uppercase;min-height:40px;'>";
+  foreach( $categories as $category )
+  {
+    foreach( $brands as $brand ){
+      if( $brand->term_id == $category->term_id )
+        echo $brand->name;
+    }
+  }
+  echo "</div>";
 });
 
 add_filter('posts_clauses_request', function ($clauses) {
@@ -136,7 +136,7 @@ function wc_minimum_order_amount() {
         if( is_cart() ) {
 
             wc_print_notice( 
-                sprintf( 'We\'re Sorry, the minimum order is to checkout is %s before VAT.' , 
+                sprintf( 'We’re sorry, the minimum order to checkout is %s' , 
                     wc_price( $minimum )
                     // wc_price( WC()->cart->total )
                 ), 'error' 
@@ -145,7 +145,7 @@ function wc_minimum_order_amount() {
         } else {
 
             wc_add_notice( 
-                sprintf( 'We\'re Sorry, the minimum order is to checkout is %s before VAT.' , 
+                sprintf( 'We’re sorry, the minimum order to checkout is %s' , 
                     wc_price( $minimum )
                     // wc_price( WC()->cart->total )
                 ), 'error' 

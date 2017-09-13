@@ -25,8 +25,9 @@ function get_news_previews($page = 1, $per_page = POSTS_MEDIA_PER_PAGE, $filter 
 function get_news_posts($filter = null, $cat_id = '', $offset = 0) {
   global $wpdb;
 
-  if ($filter === 'latest_news') {
-  	$filter = 'date';
+  $order = 'DESC';
+  if ($filter === 'latest_news' || $filter == null ) {
+      $filter = 'date';
   }
 
 	$args = array(
@@ -34,7 +35,7 @@ function get_news_posts($filter = null, $cat_id = '', $offset = 0) {
 		'offset'           => $offset,
 		'category'         => $cat_id,
 		'orderby'          => $filter,
-		'order'            => 'ASC',
+		'order'            => $order,
 		'post_type'        => 'post',
 		'post_status'      => 'publish',
 		'suppress_filters' => true
