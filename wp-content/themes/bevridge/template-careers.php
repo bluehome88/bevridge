@@ -76,7 +76,7 @@ get_header();
                   <? if ($error) { ?>
                     <p class="careers-job-apply-form-error"><?= $error ?></p>
                   <? } elseif (@$_POST['wp_job_manager_send_application']) { ?>
-                    <p class="careers-job-apply-form-success">Your application have been submitted. Thank you!</p>
+                    <p class="careers-job-apply-form-success">Your application has been submitted. Thank you!</p>
                   <? } ?>
                 <? } ?>
 

@@ -73,7 +73,7 @@ get_header(); ?>
         	  <div class="shop_area_products_left">
               	 <h1>Blue Moon 24 
 <font class="shop_area_products_font_color1">Anniversary special pack </font>
-<font class="shop_area_products_font_color2">800 packs avalaible</font></h1>
+<font class="shop_area_products_font_color2">800 packs not avalaible</font></h1>
 	<a href="#">buy Now!</a>
     <div class="products_img_absolute"><img src="../images/blue_moon.png" /></div>
               </div>

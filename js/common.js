@@ -50,12 +50,8 @@ $(document).ready(function(){
       $(this).children('p').remove();
     }
   });
- $(document).ready(function() {	
-            $('.ma5slider').ma5slider();
-		
-        });
-    
- $(document).ready(function() {
+
+  $(document).ready(function() {
     $().myTabs({});
 });
  
