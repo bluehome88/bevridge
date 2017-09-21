@@ -25,6 +25,7 @@ $brands_terms = custom_get_brands_categories();
 
 // NEW IS STORE products HTML
 ob_start();
+
 woocommerce_content();
 $new_in_store = ob_get_clean();
 $new_in_store_count = $wp_query->post_count;
@@ -36,12 +37,12 @@ get_header(); ?>
      
          
 <header class="inner_page_header"> <div class="container">
-		<div class="my_account_link">
-		  	<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account'); ?>"><?php _e('My Account'); ?></a>
-		</div>
+    <div class="my_account_link">
+        <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account'); ?>"><?php _e('My Account'); ?></a>
+    </div>
 
-		<h1 class="inner_title">STORE</h1> 
-	
+    <h1 class="inner_title">STORE</h1> 
+  
     </div></header>
     
     <div class="container product_single">
@@ -68,13 +69,13 @@ get_header(); ?>
           </div>
         </div>
       </div>
-		
+    
         <div class="shop_area_products">
-        	  <div class="shop_area_products_left">
-              	 <h1>Blue Moon 24 
+            <div class="shop_area_products_left">
+                 <h1>Blue Moon 24 
 <font class="shop_area_products_font_color1">Anniversary special pack </font>
-<font class="shop_area_products_font_color2">800 packs not avalaible</font></h1>
-	<a href="#">buy Now!</a>
+<font class="shop_area_products_font_color2">800 packs available</font></h1>
+  <a href="#">buy Now!</a>
     <div class="products_img_absolute"><img src="../images/blue_moon.png" /></div>
               </div>
               <div class="shop_area_products_right">
@@ -93,10 +94,10 @@ get_header(); ?>
       </select>
   <a rel="nofollow" href="#" data-quantity="1" data-product_id="120" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart"></a>
 <script>
-	function changeQty()
-	{
-		jQuery('#top_product .add_to_cart_button').attr("data-quantity", jQuery('#top_product .quantity-select').val());
-	}
+  function changeQty()
+  {
+    jQuery('#top_product .add_to_cart_button').attr("data-quantity", jQuery('#top_product .quantity-select').val());
+  }
 </script>
 
 
@@ -155,11 +156,7 @@ get_header(); ?>
           if( (isset($_GET['b']) && $_GET['b'] ) || ( isset( $_GET['cat']) && $_GET['cat'])){
       ?>
             <div id="category_product" class="">
-              <? 
-              $wp_query->query_vars['orderby'] = "meta_title";
-              $wp_query->query_vars['order'] = "ASC";
-
-              woocommerce_content() ?>
+              <? woocommerce_content() ?>
             </div>
       <?php
           }
