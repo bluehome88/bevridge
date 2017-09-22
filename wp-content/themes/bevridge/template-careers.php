@@ -80,35 +80,45 @@ get_header();
                   <? } ?>
                 <? } ?>
 
-                <form class="careers-job-apply-form careers-custom-job-apply-form" action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
-                  <div class="input-row-two-cols">
-                    <div class="input-row-col1">
-                      <input type="text" name="candidate_firstname" placeholder="First Name" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_firstname']) . '"' ?>>
+                <?php
+                    if ( get_option( 'job_application_form_require_login', 0 ) && ! is_user_logged_in() ) {
+                      get_job_manager_template( 'application-form-login.php', array(), 'wp-job-manager-applications', JOB_MANAGER_APPLICATIONS_PLUGIN_DIR . '/templates/' );
+                    }
+                    else
+                    {
+                ?>
+                  <form class="careers-job-apply-form careers-custom-job-apply-form" action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
+                    <div class="input-row-two-cols">
+                      <div class="input-row-col1">
+                        <input type="text" name="candidate_firstname" placeholder="First Name" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_firstname']) . '"' ?>>
+                      </div>
+                      <div class="input-row-col2">
+                        <input type="text" name="candidate_lastname" placeholder="Last Name" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_lastname']) . '"' ?>>
+                      </div>
                     </div>
-                    <div class="input-row-col2">
-                      <input type="text" name="candidate_lastname" placeholder="Last Name" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_lastname']) . '"' ?>>
+                    <div class="input-row">
+                      <input type="text" name="candidate_email" placeholder="E-mail" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_email']) . '"' ?>>
                     </div>
-                  </div>
-                  <div class="input-row">
-                    <input type="text" name="candidate_email" placeholder="E-mail" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_email']) . '"' ?>>
-                  </div>
-                  <div class="input-row">
-                    <input type="text" name="candidate_phone" placeholder="Phone" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_phone']) . '"' ?>>
-                  </div>
-                  <div class="input-row">
-                    <textarea name="application_message" rows="5" placeholder="Message" <? if ($error) echo 'value="' . esc_attr($_POST['application_message']) . '"' ?>></textarea>
-                  </div>
-                  <div class="input-row">
-                    <label class="carrers-application_attachment-label">
-                      Attach CV
-                      <input type="file" accept=".jpg,.jpeg,.jpe,.gif,.png,.bmp,.tiff,.tif,.ico,.asf,.asx,.wmv,.wmx,.wm,.avi,.divx,.flv,.mov,.qt,.mpeg,.mpg,.mpe,.mp4,.m4v,.ogv,.webm,.mkv,.3gp,.3gpp,.3g2,.3gp2,.txt,.asc,.c,.cc,.h,.srt,.csv,.tsv,.ics,.rtx,.css,.htm,.html,.vtt,.dfxp,.mp3,.m4a,.m4b,.ra,.ram,.wav,.ogg,.oga,.mid,.midi,.wma,.wax,.mka,.rtf,.js,.pdf,.class,.tar,.zip,.gz,.gzip,.rar,.7z,.psd,.xcf,.doc,.pot,.pps,.ppt,.wri,.xla,.xls,.xlt,.xlw,.mdb,.mpp,.docx,.docm,.dotx,.dotm,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.xlam,.pptx,.pptm,.ppsx,.ppsm,.potx,.potm,.ppam,.sldx,.sldm,.onetoc,.onetoc2,.onetmp,.onepkg,.oxps,.xps,.odt,.odp,.ods,.odg,.odc,.odb,.odf,.wp,.wpd,.key,.numbers,.pages" multiple name="application_attachment" id="application_attachment">
-                    </label>
-                  </div>
+                    <div class="input-row">
+                      <input type="text" name="candidate_phone" placeholder="Phone" <? if ($error) echo 'value="' . esc_attr($_POST['candidate_phone']) . '"' ?>>
+                    </div>
+                    <div class="input-row">
+                      <textarea name="application_message" rows="5" placeholder="Message" <? if ($error) echo 'value="' . esc_attr($_POST['application_message']) . '"' ?>></textarea>
+                    </div>
+                    <div class="input-row">
+                      <label class="carrers-application_attachment-label">
+                        Attach CV
+                        <input type="file" accept=".jpg,.jpeg,.jpe,.gif,.png,.bmp,.tiff,.tif,.ico,.asf,.asx,.wmv,.wmx,.wm,.avi,.divx,.flv,.mov,.qt,.mpeg,.mpg,.mpe,.mp4,.m4v,.ogv,.webm,.mkv,.3gp,.3gpp,.3g2,.3gp2,.txt,.asc,.c,.cc,.h,.srt,.csv,.tsv,.ics,.rtx,.css,.htm,.html,.vtt,.dfxp,.mp3,.m4a,.m4b,.ra,.ram,.wav,.ogg,.oga,.mid,.midi,.wma,.wax,.mka,.rtf,.js,.pdf,.class,.tar,.zip,.gz,.gzip,.rar,.7z,.psd,.xcf,.doc,.pot,.pps,.ppt,.wri,.xla,.xls,.xlt,.xlw,.mdb,.mpp,.docx,.docm,.dotx,.dotm,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.xlam,.pptx,.pptm,.ppsx,.ppsm,.potx,.potm,.ppam,.sldx,.sldm,.onetoc,.onetoc2,.onetmp,.onepkg,.oxps,.xps,.odt,.odp,.ods,.odg,.odc,.odb,.odf,.wp,.wpd,.key,.numbers,.pages" multiple name="application_attachment" id="application_attachment">
+                      </label>
+                    </div>
 
-                  <button type="submit" name="wp_job_manager_send_application" class="careers__learn-more applynow" value="1">APPLY NOW</button>
+                    <button type="submit" name="wp_job_manager_send_application" class="careers__learn-more applynow" value="1">APPLY NOW</button>
 
-                  <input type="hidden" name="job_id" value="<?= $post->ID ?>">
-                </form>
+                    <input type="hidden" name="job_id" value="<?= $post->ID ?>">
+                  </form>
+                <?php 
+                    }
+                ?>
               </div>
             </div>
             <a href="<? the_permalink() ?>" class="learnmore careers__learn-more">LEARN MORE</a>

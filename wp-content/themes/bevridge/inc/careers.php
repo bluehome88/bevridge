@@ -50,6 +50,11 @@ add_filter('job_application_form_fields', function ($fields) {
     if (!is_email(@$_POST['candidate_email'])) {
       throw new Exception( __( 'Please provide a valid email address', 'wp-job-manager-applications' ) );
     }
+
+    if ( !$_FILES['application_attachment']['size'] ) {
+      throw new Exception( __( 'Please upload CV file', 'wp-job-manager-applications' ) );
+    }
+
   } catch (Exception $e) {
     $GLOBALS['wp_job_manager_application_submit_error'] = $e->getMessage();
   }
