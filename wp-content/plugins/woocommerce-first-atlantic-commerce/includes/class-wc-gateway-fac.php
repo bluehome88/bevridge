@@ -258,16 +258,16 @@ class WC_Gateway_FirstAtlanticCommerce extends WC_Payment_Gateway
             wc_add_notice( $this->get_validation_error( __('Card Code', 'woocommerce-gateway-fac'), $_POST['fac-card-number'] ), 'error' );
             $validated = false;
         }
-		
-		// Check expire date
-		$startdate = "01-".$_POST['expdatemonth']."-".$_POST['expdateyear'];
-		$expire = strtotime($startdate);
-		$today = strtotime("today midnight");
-		
-		if($today >= $expire){
+        
+        // Check expire date
+        $startdate = "01-".$_POST['expdatemonth']."-".$_POST['expdateyear'];
+        $expire = strtotime($startdate);
+        $today = strtotime("today midnight");
+        
+        if($today >= $expire){
             wc_add_notice( $this->get_validation_error( __('Expire Date', 'woocommerce-gateway-fac'), 'invalid' ), 'error' );
             $validated = false;
-		}
+        }
 
         return $validated;
     }
@@ -357,7 +357,7 @@ class WC_Gateway_FirstAtlanticCommerce extends WC_Payment_Gateway
                     'billingAddress1' => $order->billing_address_1,
                     'billingAddress2' => $order->billing_address_2,
                     'billingCity'     => $order->billing_city,
-                    'billingPostcode' => $order->billing_postcode,
+                    'billingPostcode' => $order->billing_postcode ? $order->billing_postcode : '000000',
                     'billingState'    => $order->billing_state,
                     'billingCountry'  => $order->billing_country,
                     'email'           => $order->billing_email,
