@@ -88,7 +88,7 @@ if ( ! function_exists( 'create_job_application' ) ) {
 					), $application_id );
 
 					$headers   = array();
-					$headers[] = 'From: ' . $candidate_email;
+					$headers[] = 'From: ' . "info@thebevridge.com";
 					$headers[] = 'Reply-To: ' . $candidate_email;
 					$headers[] = 'Content-Type: text/plain';
 					$headers[] = 'charset=utf-8';
