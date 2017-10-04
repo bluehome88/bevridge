@@ -3933,7 +3933,7 @@ select.quantity-select {font-size: 14px;line-height: 32px;padding: 0 0 0 28px;te
 .my_account_link a{ color:white; text-decoration: none; text-transform: uppercase; }
 .logo.fac{left:inherit; right:20px;top:-17px; width:280px;}
 .woocommerce-error{background: #d44646;color: white;padding: 15px 15px 10px;margin-bottom:15px;line-height: 16px;}
-.store #IndexShopFlex{ max-width:1205px; width: calc( 100% + 25px)}
+#store #IndexShopFlex{ max-width:1205px; width: calc( 100% + 25px)}
 .store #category_product .woocommerce-info{ color: black;}
 .our_market_content_padding, .vc_custom_1505753311683{
   background: #31508f url("../../../images/index_ourmarket_bg.jpg") top center no-repeat !important;  

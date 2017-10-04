@@ -134,7 +134,7 @@ get_header(); ?>
                 </option>
               <? } ?>
 
-              <? foreach ($query_parts as $key => $val) { ?>
+<!--               <? foreach ($query_parts as $key => $val) { ?>
                 <? if ($key === 'b') continue ?>
                 <? if (is_array($val)) { ?>
                   <? foreach ($val as $v) { ?>
@@ -143,7 +143,7 @@ get_header(); ?>
                 <? } else { ?>
                   <input type="hidden" name="<?= esc_attr($key) ?>" value="<?= esc_attr($val) ?>">
                 <? } ?>
-              <? } ?>
+              <? } ?> -->
             </select>
           </form>
         </div>
